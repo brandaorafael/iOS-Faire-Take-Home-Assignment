@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         self.navigationItem.title = "Faire"
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "baseline_filter_list_black"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(filter))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         
         collection.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         collection.delegate = self
@@ -67,6 +69,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             self.collection.reloadData()
         })
+    }
+    
+    //MARK: - Selectors
+    
+    @objc func filter(){
+        Coordinator.goToPreFilter(context: self.navigationController!)
     }
 
 }

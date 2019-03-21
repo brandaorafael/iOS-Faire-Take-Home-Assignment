@@ -10,6 +10,8 @@
 		276141CDD1622D4363F5831C /* Pods_iOS_Faire_Take_Home_AssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2575D034ADBC30917EED8A41 /* Pods_iOS_Faire_Take_Home_AssignmentUITests.framework */; };
 		292F777597B4155551B3DB13 /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C218F382DE4A12A1B05BCD /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework */; };
 		49FF2511D9C5BE02FEEB1871 /* Pods_iOS_Faire_Take_Home_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8B25CC3814101C83B5A95 /* Pods_iOS_Faire_Take_Home_Assignment.framework */; };
+		D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52B92244334B00CFF041 /* Coordinator.swift */; };
+		D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */; };
 		D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12462243D4E30097EC7A /* AppDelegate.swift */; };
 		D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12482243D4E30097EC7A /* ViewController.swift */; };
 		D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FB124A2243D4E30097EC7A /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		9DDBD3CFE4F4B84DEFBCFCDA /* Pods-iOS-Faire-Take-Home-AssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Faire-Take-Home-AssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Faire-Take-Home-AssignmentUITests/Pods-iOS-Faire-Take-Home-AssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C59B68D2C4BDCFB50E399209 /* Pods-iOS-Faire-Take-Home-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Faire-Take-Home-Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Faire-Take-Home-Assignment/Pods-iOS-Faire-Take-Home-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		D2C218F382DE4A12A1B05BCD /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Faire_Take_Home_AssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64E52B92244334B00CFF041 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreFilterViewController.swift; sourceTree = "<group>"; };
 		D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Faire-Take-Home-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FB12462243D4E30097EC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FB12482243D4E30097EC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D64E52B82244332E00CFF041 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D64E52B92244334B00CFF041 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D64E52BB224433B600CFF041 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D6FB12752243D6E00097EC7A /* HomeViewController.swift */,
+				D6FB12762243D6E00097EC7A /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D64E52BC224433C600CFF041 /* PreFilter */ = {
+			isa = PBXGroup;
+			children = (
+				D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */,
+			);
+			path = PreFilter;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +182,7 @@
 		D6FB12452243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				D64E52B82244332E00CFF041 /* Coordinator */,
 				D6FB128922440ED30097EC7A /* Objects */,
 				D6FB128022440AA40097EC7A /* View */,
 				D6FB12792243D9F50097EC7A /* WebService */,
@@ -189,8 +219,8 @@
 		D6FB12742243D68B0097EC7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6FB12752243D6E00097EC7A /* HomeViewController.swift */,
-				D6FB12762243D6E00097EC7A /* HomeViewController.xib */,
+				D64E52BC224433C600CFF041 /* PreFilter */,
+				D64E52BB224433B600CFF041 /* Home */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -450,11 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */,
 				D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */,
 				D6FB127F2243DCA00097EC7A /* WebServices.swift in Sources */,
 				D6FB127D2243DBDF0097EC7A /* ServiceRequest.swift in Sources */,
 				D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */,
 				D6FB128B22440EEC0097EC7A /* Brand.swift in Sources */,
+				D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */,
 				D6FB128722440D720097EC7A /* HomeCell.swift in Sources */,
 				D6FB12772243D6E00097EC7A /* HomeViewController.swift in Sources */,
 			);
