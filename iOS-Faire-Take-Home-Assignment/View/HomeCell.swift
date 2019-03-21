@@ -7,20 +7,23 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeCell: UICollectionViewCell {
     
-    @IBOutlet weak var ll:UILabel!
+    @IBOutlet weak var background:UIImageView!
+    @IBOutlet weak var name:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        ll.layer.borderColor = UIColor.black.cgColor
+//        ll.layer.borderColor = UIColor.black.cgColor
     }
     
-    func setTitle(title: String) {
-        ll.text = title
+    func setBackground(url: String, name:String) {
+        background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        self.name.text = name
     }
 
 }

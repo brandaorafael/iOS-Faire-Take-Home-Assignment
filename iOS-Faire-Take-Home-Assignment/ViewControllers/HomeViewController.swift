@@ -8,24 +8,23 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     @IBOutlet weak var collection: UICollectionView!
     
     var itens: Array<Brand> = []
+    var page = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Faire"
         
         collection.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         collection.delegate = self
         collection.dataSource = self
 
-        WebService.getMakersWithFilters(leadTime: 0, makerValues: [], page: 1, category: nil, serviceBlock: { (result: Dictionary<String, Any>) in
-            self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
-            
-            self.collection.reloadData()
-        })
+        loadItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,14 +33,40 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        cell.setTitle(title: itens[indexPath.row].name)
+        if(itens[indexPath.row].images.count > 1){
+            cell.setBackground(url: itens[indexPath.row].images[1].url, name: itens[indexPath.row].name)
+        } else {
+            cell.setBackground(url: itens[indexPath.row].images[0].url, name: itens[indexPath.row].name)
+        }
+        
+        if indexPath.row == self.itens.count - 1 {
+            page += 1
+            loadItens()
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let cellWidth = (width - 30) / 3 // compute your cell width
-        return CGSize(width: cellWidth, height: cellWidth / 0.6)
+        let padding: CGFloat =  50
+        let collectionViewSize = collectionView.frame.size.width - padding
+        
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func loadItens(){
+        WebService.getMakersWithFilters(leadTime: 0, makerValues: [], page: page, category: nil, serviceBlock: { (result: Dictionary<String, Any>) in
+            self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
+            
+            self.collection.reloadData()
+        })
     }
 
 }

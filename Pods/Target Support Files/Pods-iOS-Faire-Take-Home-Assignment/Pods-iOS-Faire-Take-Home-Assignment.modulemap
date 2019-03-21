@@ -1,0 +1,6 @@
+framework module Pods_iOS_Faire_Take_Home_Assignment {
+  umbrella header "Pods-iOS-Faire-Take-Home-Assignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
