@@ -24,34 +24,34 @@
                     </imageView>
                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByM-6p-r1G">
                         <rect key="frame" x="0.0" y="97.5" width="164" height="54.5"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiW-La-bU2">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="54.5"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tiW-La-bU2" firstAttribute="top" secondItem="ByM-6p-r1G" secondAttribute="top" id="ABI-z8-024"/>
-                            <constraint firstItem="tiW-La-bU2" firstAttribute="leading" secondItem="ByM-6p-r1G" secondAttribute="leading" id="Vzv-pt-tBU"/>
-                            <constraint firstAttribute="bottom" secondItem="tiW-La-bU2" secondAttribute="bottom" id="fgs-lU-CsD"/>
-                            <constraint firstAttribute="trailing" secondItem="tiW-La-bU2" secondAttribute="trailing" id="gbb-gB-7d4"/>
                             <constraint firstAttribute="width" secondItem="ByM-6p-r1G" secondAttribute="height" multiplier="3:1" id="qu2-DF-pwQ"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiW-La-bU2">
+                        <rect key="frame" x="0.0" y="97.5" width="164" height="54.5"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tiW-La-bU2" secondAttribute="height" multiplier="3:1" id="y4d-19-DnV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="tiW-La-bU2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="67O-gt-uJQ"/>
+                <constraint firstAttribute="trailing" secondItem="tiW-La-bU2" secondAttribute="trailing" id="BuU-Sy-ol2"/>
                 <constraint firstAttribute="bottom" secondItem="ByM-6p-r1G" secondAttribute="bottom" id="Ffu-xF-B5i"/>
                 <constraint firstAttribute="trailing" secondItem="ByM-6p-r1G" secondAttribute="trailing" id="KpM-Du-Z3G"/>
                 <constraint firstAttribute="bottom" secondItem="hAT-Fo-5HW" secondAttribute="bottom" id="LnN-om-9Fg"/>
                 <constraint firstItem="ByM-6p-r1G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="N9P-eq-wMy"/>
                 <constraint firstItem="hAT-Fo-5HW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bUe-Ps-yA3"/>
                 <constraint firstItem="hAT-Fo-5HW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cn9-Sm-Cqg"/>
+                <constraint firstAttribute="bottom" secondItem="tiW-La-bU2" secondAttribute="bottom" id="cqU-H6-w3W"/>
                 <constraint firstAttribute="trailing" secondItem="hAT-Fo-5HW" secondAttribute="trailing" id="yrq-Cn-thm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
