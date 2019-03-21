@@ -9,25 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var itens: Array<Brand> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        WebService.getMakerProducts(brand: "b_f0fbd5c7", serviceBlock: { (result: Dictionary<String, Any>) in
-            print("gg")
+        WebService.getMakersWithFilters(leadTime: 0, makerValues: [], page: 1, category: nil, serviceBlock: { (result: Dictionary<String, Any>) in
+            self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
         })
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

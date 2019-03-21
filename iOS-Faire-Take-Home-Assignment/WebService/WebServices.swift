@@ -49,7 +49,7 @@ class WebService {
         // Page
         var paginationData = Dictionary<String, Any>.init()
         
-        paginationData["page_size"] = 10
+        paginationData["page_size"] = 30
         paginationData["page_number"] = page
         
         body["pagination_data"] = paginationData
