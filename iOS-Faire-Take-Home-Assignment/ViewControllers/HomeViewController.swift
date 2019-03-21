@@ -13,7 +13,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        WebService.getMakerProducts(brand: "b_f0fbd5c7", serviceBlock: { (result: Dictionary<String, Any>) in
+            print("gg")
+            
+        })
     }
 
 
