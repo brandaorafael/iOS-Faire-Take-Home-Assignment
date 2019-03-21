@@ -19,15 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-Vp-IcZ">
-                        <rect key="frame" x="55" y="66" width="62" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jQ-PS-cAu">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-Vp-IcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="152"/>
                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9jQ-PS-cAu" secondAttribute="bottom" id="0jv-R8-rD0"/>
+                <constraint firstAttribute="trailing" secondItem="9jQ-PS-cAu" secondAttribute="trailing" id="8wM-cM-J4A"/>
+                <constraint firstItem="9jQ-PS-cAu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aq9-Da-GNo"/>
+                <constraint firstAttribute="bottom" secondItem="Ndf-Vp-IcZ" secondAttribute="bottom" id="djE-Yp-byo"/>
+                <constraint firstItem="Ndf-Vp-IcZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jsg-JW-hxG"/>
+                <constraint firstItem="Ndf-Vp-IcZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="l6j-wG-iuH"/>
+                <constraint firstAttribute="trailing" secondItem="Ndf-Vp-IcZ" secondAttribute="trailing" id="sRh-qx-NFe"/>
+                <constraint firstItem="9jQ-PS-cAu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vc4-Qh-MJ2"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="164" height="152"/>
             <connections>
