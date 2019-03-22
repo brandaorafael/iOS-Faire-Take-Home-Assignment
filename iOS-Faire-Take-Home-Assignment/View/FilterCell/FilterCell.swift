@@ -24,12 +24,20 @@ class FilterCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setFilter(filter:String, touched:Bool){
+    func setFilter(filter:String, touched:Bool, unique:Bool){
         self.filter.text = filter
         if(touched){
-            icon.image = UIImage(named: "baseline_check_box_black")
+            if(unique){
+                icon.image = UIImage(named: "baseline_radio_button_checked_black")
+            } else {
+                icon.image = UIImage(named: "baseline_check_box_black")
+            }
         } else{
-            icon.image = UIImage(named: "baseline_check_box_outline_blank_black")
+            if(unique){
+                icon.image = UIImage(named: "baseline_radio_button_unchecked_black")
+            } else {
+                icon.image = UIImage(named: "baseline_check_box_outline_blank_black")
+            }
         }
     }
     

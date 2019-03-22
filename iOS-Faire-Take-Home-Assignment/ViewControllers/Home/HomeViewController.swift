@@ -15,8 +15,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var itens: Array<Brand> = []
     var page = 1
     
-    var leadtimeArr = ""
+    var leadtimeIndex:Int?
     var makerValuesArr = Array<String>.init()
+    
     
     var makerValuesSelected = [false, false, false, false, false]
 
@@ -69,6 +70,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func loadItens(){
+        
+        let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
+        
+        
         WebService.getMakersWithFilters(leadTime: 0, makerValues: [], page: page, category: nil, serviceBlock: { (result: Dictionary<String, Any>) in
             self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
@@ -79,15 +84,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Selectors
     
     @objc func filter(){
-        let filterVC = FilterViewController.initWith(filters: makerValuesSelected)
+        let filterVC = FilterViewController.initWith(filters: makerValuesSelected, leadTimeIndex: leadtimeIndex)
         
         filterVC.delegate = self
         
         Coordinator.goToPreFilter(context: self.navigationController!, filterVC: filterVC)
     }
     
-    func selectedFilters(filters: Array<Bool>) {
-        makerValuesSelected = filters
+    func selectedFilters(makerValues: Array<Bool>, leadTimeIndex: Int?) {
+        self.leadtimeIndex = leadTimeIndex
+        makerValuesSelected = makerValues
     }
 
 }
