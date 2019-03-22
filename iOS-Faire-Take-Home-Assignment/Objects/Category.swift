@@ -11,12 +11,12 @@ import Foundation
 class Category {
     
     var name: String
-    var subCategories:Array<Category>
+//    var subCategories:Array<Category>
     
     init(dic: Dictionary<String, Any>){
         self.name = dic["name"] as! String
         
-        self.subCategories = Category.createCategoryArray(array: dic["sub_categories"] as! Array<Dictionary<String, Any>>)
+//        self.subCategories = Category.createCategoryArray(array: dic["sub_categories"] as! Array<Dictionary<String, Any>>)
         
     }
     
@@ -25,6 +25,12 @@ class Category {
         
         for dic: Dictionary<String, Any> in array {
             returnArray.append(Category.init(dic: dic))
+            
+            if(!(dic["sub_categories"] as! Array<Dictionary<String, Any>>).isEmpty){
+                for d:Dictionary<String, Any> in dic["sub_categories"] as! Array<Dictionary<String, Any>>{
+                    returnArray.append(Category.init(dic: d))
+                }
+            }
         }
         
         return returnArray

@@ -12,7 +12,7 @@ protocol SelectCategory {
     func selectedCategory(category:String?)
 }
 
-class CategoriesViewController: UIViewController {
+class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     var myTableView: UITableView!
     
@@ -20,6 +20,7 @@ class CategoriesViewController: UIViewController {
     
     var categories:Array<Category> = []
     var category:String?
+    var categoriesSelected = Array<Bool>.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,22 @@ class CategoriesViewController: UIViewController {
         
         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
         myTableView.register(UINib.init(nibName: "FilterCell", bundle: nil), forCellReuseIdentifier: "FilterCell")
-//        myTableView.dataSource = self
-//        myTableView.delegate = self
+        myTableView.dataSource = self
+        myTableView.delegate = self
         self.view.addSubview(myTableView)
         
         WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>) in
             self.categories = Category.createCategoryArray(array: result["result"] as! Array<Dictionary<String, Any>>)
-            print("g")
+            self.categoriesSelected = Array(repeating: false, count: self.categories.count)
+            
+            if let category: String = self.category {
+                
+                self.categoriesSelected[self.categories.index(where: { (c) -> Bool in
+                    c.name == category // test if this is the item you're looking for
+                })!] = true
+            }
+            
+            self.myTableView.reloadData()
         })
     }
     
@@ -51,8 +61,29 @@ class CategoriesViewController: UIViewController {
         return vc
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
+        
+        cell.setFilter(filter:categories[indexPath.row].name, touched: categoriesSelected[indexPath.row], unique: true)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        categoriesSelected = Array(repeating: false, count: self.categories.count)
+        categoriesSelected[indexPath.row] = true
+        
+        tableView.reloadData()
+    }
+    
     @objc func done(){
-        delegate.selectedCategory(category: category)
+        if let n = categoriesSelected.index(of: true) {
+            delegate.selectedCategory(category: categories[n].name)
+        }
         self.navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }

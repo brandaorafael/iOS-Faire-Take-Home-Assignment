@@ -86,12 +86,8 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
         if(indexPath.section == 0){
             makerValuesSelected[indexPath.row] = !makerValuesSelected[indexPath.row]
-            
-//            cell.setFilter(filter:makerValuesArr[indexPath.row], touched: makerValuesSelected[indexPath.row], unique: false)
         } else {
             leadtimeSelected = [false, false, false, false]
             leadtimeSelected[indexPath.row] = true
