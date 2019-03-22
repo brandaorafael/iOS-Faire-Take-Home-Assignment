@@ -10,6 +10,8 @@ import UIKit
 
 class PreFilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var filterVC:FilterViewController!
+    
     var itens = ["Categories", "Filters"]
     var myTableView: UITableView!
 
@@ -27,6 +29,14 @@ class PreFilterViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    static func initWith(filterVC: FilterViewController) -> PreFilterViewController {
+        let vc = PreFilterViewController(nibName: nil, bundle: nil)
+        
+        vc.filterVC = filterVC
+        
+        return vc
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itens.count
@@ -38,6 +48,14 @@ class PreFilterViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.textLabel?.text = itens[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            
+        } else {
+            Coordinator.goToFilter(context:self.navigationController!, filterVC: filterVC)
+        }
     }
 
 }

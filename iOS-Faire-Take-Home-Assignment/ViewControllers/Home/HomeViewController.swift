@@ -8,12 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFilters {
    
     @IBOutlet weak var collection: UICollectionView!
     
     var itens: Array<Brand> = []
     var page = 1
+    
+    var leadtimeArr = ""
+    var makerValuesArr = Array<String>.init()
+    
+    var makerValuesSelected = [false, false, false, false, false]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +79,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Selectors
     
     @objc func filter(){
-        Coordinator.goToPreFilter(context: self.navigationController!)
+        let filterVC = FilterViewController.initWith(filters: makerValuesSelected)
+        
+        filterVC.delegate = self
+        
+        Coordinator.goToPreFilter(context: self.navigationController!, filterVC: filterVC)
+    }
+    
+    func selectedFilters(filters: Array<Bool>) {
+        makerValuesSelected = filters
     }
 
 }

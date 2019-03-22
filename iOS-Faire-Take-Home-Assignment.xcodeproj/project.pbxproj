@@ -12,6 +12,9 @@
 		49FF2511D9C5BE02FEEB1871 /* Pods_iOS_Faire_Take_Home_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8B25CC3814101C83B5A95 /* Pods_iOS_Faire_Take_Home_Assignment.framework */; };
 		D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52B92244334B00CFF041 /* Coordinator.swift */; };
 		D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */; };
+		D69709D92245547200A1F561 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709D82245547200A1F561 /* FilterViewController.swift */; };
+		D69709DC224556AF00A1F561 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709DA224556AF00A1F561 /* FilterCell.swift */; };
+		D69709DD224556AF00A1F561 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69709DB224556AF00A1F561 /* FilterCell.xib */; };
 		D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12462243D4E30097EC7A /* AppDelegate.swift */; };
 		D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12482243D4E30097EC7A /* ViewController.swift */; };
 		D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FB124A2243D4E30097EC7A /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		D2C218F382DE4A12A1B05BCD /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Faire_Take_Home_AssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64E52B92244334B00CFF041 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreFilterViewController.swift; sourceTree = "<group>"; };
+		D69709D82245547200A1F561 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		D69709DA224556AF00A1F561 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		D69709DB224556AF00A1F561 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Faire-Take-Home-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FB12462243D4E30097EC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FB12482243D4E30097EC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,32 @@
 			path = PreFilter;
 			sourceTree = "<group>";
 		};
+		D69709D72245545300A1F561 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				D69709D82245547200A1F561 /* FilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		D69709DE224556BB00A1F561 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				D6FB128522440D720097EC7A /* HomeCell.swift */,
+				D6FB128622440D720097EC7A /* HomeCell.xib */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		D69709DF224556C700A1F561 /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				D69709DA224556AF00A1F561 /* FilterCell.swift */,
+				D69709DB224556AF00A1F561 /* FilterCell.xib */,
+			);
+			path = FilterCell;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +251,7 @@
 		D6FB12742243D68B0097EC7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D69709D72245545300A1F561 /* Filter */,
 				D64E52BC224433C600CFF041 /* PreFilter */,
 				D64E52BB224433B600CFF041 /* Home */,
 			);
@@ -238,8 +271,8 @@
 		D6FB128022440AA40097EC7A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D6FB128522440D720097EC7A /* HomeCell.swift */,
-				D6FB128622440D720097EC7A /* HomeCell.xib */,
+				D69709DE224556BB00A1F561 /* HomeCell */,
+				D69709DF224556C700A1F561 /* FilterCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +396,7 @@
 				D6FB12512243D4E40097EC7A /* LaunchScreen.storyboard in Resources */,
 				D6FB124E2243D4E40097EC7A /* Assets.xcassets in Resources */,
 				D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */,
+				D69709DD224556AF00A1F561 /* FilterCell.xib in Resources */,
 				D6FB12782243D6E00097EC7A /* HomeViewController.xib in Resources */,
 				D6FB128822440D720097EC7A /* HomeCell.xib in Resources */,
 			);
@@ -482,8 +516,10 @@
 			files = (
 				D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */,
 				D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */,
+				D69709DC224556AF00A1F561 /* FilterCell.swift in Sources */,
 				D6FB127F2243DCA00097EC7A /* WebServices.swift in Sources */,
 				D6FB127D2243DBDF0097EC7A /* ServiceRequest.swift in Sources */,
+				D69709D92245547200A1F561 /* FilterViewController.swift in Sources */,
 				D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */,
 				D6FB128B22440EEC0097EC7A /* Brand.swift in Sources */,
 				D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */,

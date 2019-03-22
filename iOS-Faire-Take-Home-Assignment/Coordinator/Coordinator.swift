@@ -19,9 +19,13 @@ class Coordinator {
         }
     }
     
-    static func goToPreFilter(context:UIViewController){
-        let VC = PreFilterViewController(nibName: nil, bundle: nil) as PreFilterViewController
+    static func goToPreFilter(context:UIViewController, filterVC: FilterViewController){
+        let VC = PreFilterViewController.initWith(filterVC: filterVC) as PreFilterViewController
         self.navigateToViewController(newVC: VC, context: context)
+    }
+    
+    static func goToFilter(context:UIViewController, filterVC: FilterViewController){
+        self.navigateToViewController(newVC: filterVC, context: context)
     }
     
 }
