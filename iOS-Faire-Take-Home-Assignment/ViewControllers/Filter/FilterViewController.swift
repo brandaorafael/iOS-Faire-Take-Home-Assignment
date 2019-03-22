@@ -31,7 +31,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             leadtimeSelected[leadTimeIndex] = true
         }
         
-        self.navigationItem.title = "Faire"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "baseline_check_black"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(done))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         

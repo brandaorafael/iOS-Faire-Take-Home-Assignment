@@ -19,13 +19,17 @@ class Coordinator {
         }
     }
     
-    static func goToPreFilter(context:UIViewController, filterVC: FilterViewController){
-        let VC = PreFilterViewController.initWith(filterVC: filterVC) as PreFilterViewController
+    static func goToPreFilter(context:UIViewController, filterVC: FilterViewController, categoriesVC: CategoriesViewController){
+        let VC = PreFilterViewController.initWith(filterVC: filterVC, categoriesVC:categoriesVC) as PreFilterViewController
         self.navigateToViewController(newVC: VC, context: context)
     }
     
     static func goToFilter(context:UIViewController, filterVC: FilterViewController){
         self.navigateToViewController(newVC: filterVC, context: context)
+    }
+    
+    static func goToCategories(context:UIViewController, categoriesVC: CategoriesViewController){
+        self.navigateToViewController(newVC: categoriesVC, context: context)
     }
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFilters {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFilters, SelectCategory {
    
     @IBOutlet weak var collection: UICollectionView!
     
@@ -18,8 +18,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var leadtimeIndex:Int?
     var makerValuesArr = Array<String>.init()
     
-    
     var makerValuesSelected = [false, false, false, false, false]
+    
+    var category:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +73,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func loadItens(){
         
         let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
+
+        var makerValues = Array<Int>.init()
+        for (index, element) in makerValuesSelected.enumerated() {
+            if(element){
+                makerValues.append(index)
+            }
+        }
         
-        
-        WebService.getMakersWithFilters(leadTime: 0, makerValues: [], page: page, category: nil, serviceBlock: { (result: Dictionary<String, Any>) in
+        WebService.getMakersWithFilters(leadTime: 0, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
             self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
             self.collection.reloadData()
@@ -85,15 +92,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @objc func filter(){
         let filterVC = FilterViewController.initWith(filters: makerValuesSelected, leadTimeIndex: leadtimeIndex)
-        
         filterVC.delegate = self
         
-        Coordinator.goToPreFilter(context: self.navigationController!, filterVC: filterVC)
+        let categoriesVC = CategoriesViewController.initWith(category: category)
+        categoriesVC.delegate = self
+        
+        Coordinator.goToPreFilter(context: self.navigationController!, filterVC: filterVC, categoriesVC: categoriesVC)
     }
     
     func selectedFilters(makerValues: Array<Bool>, leadTimeIndex: Int?) {
         self.leadtimeIndex = leadTimeIndex
         makerValuesSelected = makerValues
+        loadItens()
     }
 
+    func selectedCategory(category: String?) {
+        self.category = category
+        loadItens()
+    }
 }

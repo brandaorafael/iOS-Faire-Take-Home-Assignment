@@ -11,6 +11,7 @@ import UIKit
 class PreFilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var filterVC:FilterViewController!
+    var categoriesVC:CategoriesViewController!
     
     var itens = ["Categories", "Filters"]
     var myTableView: UITableView!
@@ -29,10 +30,11 @@ class PreFilterViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    static func initWith(filterVC: FilterViewController) -> PreFilterViewController {
+    static func initWith(filterVC: FilterViewController, categoriesVC: CategoriesViewController) -> PreFilterViewController {
         let vc = PreFilterViewController(nibName: nil, bundle: nil)
         
         vc.filterVC = filterVC
+        vc.categoriesVC = categoriesVC
         
         return vc
     }
@@ -52,7 +54,7 @@ class PreFilterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row == 0){
-            
+            Coordinator.goToCategories(context: self.navigationController!, categoriesVC: categoriesVC)
         } else {
             Coordinator.goToFilter(context:self.navigationController!, filterVC: filterVC)
         }
