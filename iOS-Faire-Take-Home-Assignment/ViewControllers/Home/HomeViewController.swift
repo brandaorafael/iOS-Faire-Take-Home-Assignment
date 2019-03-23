@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if indexPath.row == self.itens.count - 1 {
             page += 1
-            loadItens()
+            loadMoreItens()
         }
         
         return cell
@@ -73,7 +73,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func loadItens(){
         
         let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
-
+        
+        var makerValues = Array<Int>.init()
+        for (index, element) in makerValuesSelected.enumerated() {
+            if(element){
+                makerValues.append(index)
+            }
+        }
+        
+        page = 1
+        
+        WebService.getMakersWithFilters(leadTime: 0, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
+            self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
+            
+            self.collection.reloadData()
+            
+            self.collection.setContentOffset(.zero, animated: true)
+        })
+    }
+    
+    func loadMoreItens(){
+        
+        let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
+        
         var makerValues = Array<Int>.init()
         for (index, element) in makerValuesSelected.enumerated() {
             if(element){
