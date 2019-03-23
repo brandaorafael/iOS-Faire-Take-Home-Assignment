@@ -8,25 +8,76 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController {
+class ProductsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collection: UICollectionView!
+    var collection: UICollectionView!
+    
+    var products:Array<Product> = []
+    var brand: Brand!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = brand.name
 
-        // Do any additional setup after loading the view.
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        
+        collection = UICollectionView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight), collectionViewLayout: UICollectionViewFlowLayout())
+        collection.backgroundColor = UIColor.white
+        collection.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
+        collection.delegate = self
+        collection.dataSource = self
+        
+        self.view.addSubview(collection)
+        
+        loadItens()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    static func initWith(brand: Brand) -> ProductsViewController {
+        let vc = ProductsViewController(nibName: nil, bundle: nil)
+        
+        vc.brand = brand
+        
+        return vc
     }
-    */
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        
+        cell.setProduct(product: products[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  50
+        let collectionViewSize = collectionView.frame.size.width - padding
+        
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func loadItens(){
+        
+        WebService.getMakerProducts(brand: brand.token, serviceBlock: { (result: Dictionary<String, Any>) in
+            self.products = Product.createProductsArray(array: result["result"] as! Array<Dictionary<String, Any>>)
+            
+            self.collection.reloadData()
+            
+            self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
+        })
+    }
 
 }

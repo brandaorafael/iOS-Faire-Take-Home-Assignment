@@ -23,8 +23,8 @@ class Product {
         self.name = dic["name"] as! String
         self.shortDescription = dic["short_description"] as! String
         self.description = dic["description"] as! String
-        self.wholesalePriceCents = dic["wholesalePriceCents"] as! Int
-        self.retailPriceCents = dic["retailPriceCents"] as! Int
+        self.wholesalePriceCents = dic["wholesale_price_cents"] as! Int
+        self.retailPriceCents = dic["retail_price_cents"] as! Int
         
         self.images = Image.createImageArray(array: dic["images"] as! Array<Dictionary<String, Any>>)
         
