@@ -19,7 +19,7 @@ class WebService {
         ServiceRequest.dispatchService(object:false, serviceRequest: request, serviceblock: serviceBlock)
     }
     
-    static func getMakersWithFilters(leadTime:Int, makerValues:Array<Int>, page:Int, category:String?, serviceBlock: @escaping ASServiceBlock) {
+    static func getMakersWithFilters(leadTime:Int?, makerValues:Array<Int>, page:Int, category:String?, serviceBlock: @escaping ASServiceBlock) {
         let str = BASE_URL + MAKERS
         
         let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
@@ -33,8 +33,8 @@ class WebService {
         }
         
         // Lead Time
-        if(leadTime>0){
-            body["lead_time"] = leadtimeArr[leadTime-1]
+        if let leadTime = leadTime{
+            body["lead_time"] = leadtimeArr[leadTime]
         }
         
         // Maker Values

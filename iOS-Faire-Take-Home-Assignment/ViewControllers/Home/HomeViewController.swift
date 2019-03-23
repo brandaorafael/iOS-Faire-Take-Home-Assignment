@@ -72,8 +72,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func loadItens(){
         
-        let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
-        
         var makerValues = Array<Int>.init()
         for (index, element) in makerValuesSelected.enumerated() {
             if(element){
@@ -83,7 +81,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         page = 1
         
-        WebService.getMakersWithFilters(leadTime: 0, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
+        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
             self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
             self.collection.reloadData()
@@ -94,8 +92,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func loadMoreItens(){
         
-        let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
-        
         var makerValues = Array<Int>.init()
         for (index, element) in makerValuesSelected.enumerated() {
             if(element){
@@ -103,7 +99,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-        WebService.getMakersWithFilters(leadTime: 0, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
+        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
             self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
             self.collection.reloadData()

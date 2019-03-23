@@ -74,8 +74,12 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        categoriesSelected = Array(repeating: false, count: self.categories.count)
-        categoriesSelected[indexPath.row] = true
+        if(categoriesSelected[indexPath.row] == true){
+            categoriesSelected = Array(repeating: false, count: self.categories.count)
+        } else {
+            categoriesSelected = Array(repeating: false, count: self.categories.count)
+            categoriesSelected[indexPath.row] = true
+        }
         
         tableView.reloadData()
     }

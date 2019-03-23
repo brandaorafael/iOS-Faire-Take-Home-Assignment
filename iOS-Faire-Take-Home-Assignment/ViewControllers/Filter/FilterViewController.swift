@@ -89,8 +89,12 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
         if(indexPath.section == 0){
             makerValuesSelected[indexPath.row] = !makerValuesSelected[indexPath.row]
         } else {
-            leadtimeSelected = [false, false, false, false]
-            leadtimeSelected[indexPath.row] = true
+            if(leadtimeSelected[indexPath.row] == true){
+                leadtimeSelected = [false, false, false, false]
+            } else {
+                leadtimeSelected = [false, false, false, false]
+                leadtimeSelected[indexPath.row] = true
+            }
         }
         tableView.reloadData()
     }
