@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailViewController" customModule="iOS_Faire_Take_Home_Assignment" customModuleProvider="target">
             <connections>
+                <outlet property="imageSlideShow" destination="aVc-fS-T2S" id="cIV-x3-7Ng"/>
                 <outlet property="longDescription" destination="LPP-FA-ArK" id="n4A-mr-g97"/>
                 <outlet property="name" destination="EBy-nX-JEE" id="fCK-R8-0sZ"/>
-                <outlet property="picture" destination="BoT-cN-3HM" id="x7m-Q2-Mkb"/>
                 <outlet property="retailPrice" destination="eOY-NG-7vw" id="D5R-Kn-7xA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wholesalePrice" destination="lzf-el-2Rc" id="4Nj-qy-Mu1"/>
@@ -31,20 +31,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-DG-pZo" userLabel="Container">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
                             <subviews>
-                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVc-fS-T2S">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVc-fS-T2S" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoT-cN-3HM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="aVc-fS-T2S" secondAttribute="height" multiplier="3:2" id="1S3-9Q-TBn"/>
-                                        <constraint firstAttribute="bottom" secondItem="BoT-cN-3HM" secondAttribute="bottom" id="Idv-lZ-Cq2"/>
-                                        <constraint firstItem="BoT-cN-3HM" firstAttribute="leading" secondItem="aVc-fS-T2S" secondAttribute="leading" id="o57-KM-WKz"/>
-                                        <constraint firstItem="BoT-cN-3HM" firstAttribute="top" secondItem="aVc-fS-T2S" secondAttribute="top" id="pNv-Nq-Yyo"/>
-                                        <constraint firstAttribute="trailing" secondItem="BoT-cN-3HM" secondAttribute="trailing" id="xsi-4k-kZz"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBy-nX-JEE">

@@ -8,6 +8,8 @@ target 'iOS-Faire-Take-Home-Assignment' do
   # Pods for iOS-Faire-Take-Home-Assignment
   # https://github.com/SDWebImage/SDWebImage
   pod 'SDWebImage', '~> 4.0'
+  # https://github.com/zvonicek/ImageSlideshow
+  pod "ImageSlideshow/SDWebImage"
   target 'iOS-Faire-Take-Home-AssignmentTests' do
     inherit! :search_paths
     # Pods for testing

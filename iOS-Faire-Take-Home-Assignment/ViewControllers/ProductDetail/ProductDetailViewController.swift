@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ProductDetailViewController: UIViewController {
     
-    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var imageSlideShow: ImageSlideshow!
+    
+    var photoSet: Array<Image> = []
+    
+    var page = 0
+    
+//    @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var longDescription: UILabel!
     @IBOutlet weak var wholesalePrice: UILabel!
@@ -26,7 +33,24 @@ class ProductDetailViewController: UIViewController {
         wholesalePrice.text = "Wholesale - $" + String(product.wholesalePriceCents/100)
         retailPrice.text = "Retail - $" + String(product.retailPriceCents/100)
         
-        picture.sd_setImage(with: URL(string: product.images[0].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+//        picture.sd_setImage(with: URL(string: product.images[0].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        
+        var photosURLs = Array<Any>()
+        
+        for photo in product.images {
+            let urlStr = photo.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let url = URL(string: urlStr!)!
+            
+            photosURLs.append(SDWebImageSource.init(url: url, placeholder: nil))
+        }
+        
+        imageSlideShow.setImageInputs(photosURLs as! [InputSource])
+        
+        imageSlideShow.zoomEnabled = true
+        
+        imageSlideShow.currentPageChanged = { page in
+            self.page = page
+        }
         
     }
     
