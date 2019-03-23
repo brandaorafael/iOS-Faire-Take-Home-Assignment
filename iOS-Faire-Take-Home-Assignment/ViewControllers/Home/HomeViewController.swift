@@ -42,11 +42,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        if(itens[indexPath.row].images.count > 1){
-            cell.setBackground(url: itens[indexPath.row].images[1].url, name: itens[indexPath.row].name)
-        } else {
-            cell.setBackground(url: itens[indexPath.row].images[0].url, name: itens[indexPath.row].name)
-        }
+        
+        cell.setBrand(brand: itens[indexPath.row])
         
         if indexPath.row == self.itens.count - 1 {
             page += 1

@@ -18,9 +18,14 @@ class HomeCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setBackground(url: String, name:String) {
-        background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
-        self.name.text = name
+    func setBrand(brand: Brand) {
+        if(brand.images.count > 1){
+            background.sd_setImage(with: URL(string: brand.images[1].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        } else {
+            background.sd_setImage(with: URL(string: brand.images[0].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        }
+        
+        self.name.text = brand.name
     }
 
 }

@@ -18,5 +18,12 @@ class ProductCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setProduct(product: Product) {
+        background.sd_setImage(with: URL(string: product.images[1].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        
+        self.name.text = product.name
+        price.text = "Wholesale $" + String(product.wholesalePriceCents/100)
+    }
 
 }
