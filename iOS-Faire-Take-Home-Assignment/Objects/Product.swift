@@ -1,20 +1,21 @@
 //
-//  Brand.swift
+//  Product.swift
 //  iOS-Faire-Take-Home-Assignment
 //
-//  Created by Rafael Brandão on 21/03/2019.
+//  Created by Rafael Brandão on 22/03/2019.
 //  Copyright © 2019 Rafael Brandão. All rights reserved.
 //
 
 import Foundation
 
-class Brand {
+class Product {
     
     var token: String
     var name: String
     var shortDescription: String
     var description: String
-    var url: String
+    var wholesalePriceCents: Int
+    var retailPriceCents: Int
     var images: Array<Image>
     
     init(dic: Dictionary<String, Any>){
@@ -22,20 +23,20 @@ class Brand {
         self.name = dic["name"] as! String
         self.shortDescription = dic["short_description"] as! String
         self.description = dic["description"] as! String
-        self.url = dic["url"] as! String
+        self.wholesalePriceCents = dic["wholesalePriceCents"] as! Int
+        self.retailPriceCents = dic["retailPriceCents"] as! Int
         
         self.images = Image.createImageArray(array: dic["images"] as! Array<Dictionary<String, Any>>)
         
     }
     
-    static func createBrandArray(array: Array<Dictionary<String, Any>>) -> Array<Brand> {
-        var returnArray: Array<Brand> = []
+    static func createProductsArray(array: Array<Dictionary<String, Any>>) -> Array<Product> {
+        var returnArray: Array<Product> = []
         
         for dic: Dictionary<String, Any> in array {
-            returnArray.append(Brand.init(dic: dic))
+            returnArray.append(Product.init(dic: dic))
         }
         
         return returnArray
     }
 }
-

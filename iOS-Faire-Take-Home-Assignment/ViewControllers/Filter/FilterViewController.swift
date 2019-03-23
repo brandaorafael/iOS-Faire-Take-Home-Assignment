@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SelectFilters {
+protocol SelectFiltersDelegate {
     func selectedFilters(makerValues:Array<Bool>, leadTimeIndex: Int?)
 }
 
@@ -16,7 +16,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     var myTableView: UITableView!
     
-    var delegate: SelectFilters!
+    var delegate: SelectFiltersDelegate!
     
     var leadTimeIndex:Int?
     let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]

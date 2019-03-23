@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SelectCategory {
+protocol SelectCategoryDelegate {
     func selectedCategory(category:String?)
 }
 
@@ -16,7 +16,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
 
     var myTableView: UITableView!
     
-    var delegate: SelectCategory!
+    var delegate: SelectCategoryDelegate!
     
     var categories:Array<Category> = []
     var category:String?

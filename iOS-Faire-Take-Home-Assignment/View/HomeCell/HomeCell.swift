@@ -16,9 +16,6 @@ class HomeCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-//        ll.layer.borderColor = UIColor.black.cgColor
     }
     
     func setBackground(url: String, name:String) {
