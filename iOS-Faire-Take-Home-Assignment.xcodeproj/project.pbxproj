@@ -30,7 +30,6 @@
 		D6FB125C2243D4E40097EC7A /* iOS_Faire_Take_Home_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB125B2243D4E40097EC7A /* iOS_Faire_Take_Home_AssignmentTests.swift */; };
 		D6FB12672243D4E40097EC7A /* iOS_Faire_Take_Home_AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12662243D4E40097EC7A /* iOS_Faire_Take_Home_AssignmentUITests.swift */; };
 		D6FB12772243D6E00097EC7A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12752243D6E00097EC7A /* HomeViewController.swift */; };
-		D6FB12782243D6E00097EC7A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FB12762243D6E00097EC7A /* HomeViewController.xib */; };
 		D6FB127D2243DBDF0097EC7A /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB127C2243DBDF0097EC7A /* ServiceRequest.swift */; };
 		D6FB127F2243DCA00097EC7A /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB127E2243DCA00097EC7A /* WebServices.swift */; };
 		D6FB128722440D720097EC7A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB128522440D720097EC7A /* HomeCell.swift */; };
@@ -91,7 +90,6 @@
 		D6FB12662243D4E40097EC7A /* iOS_Faire_Take_Home_AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Faire_Take_Home_AssignmentUITests.swift; sourceTree = "<group>"; };
 		D6FB12682243D4E40097EC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6FB12752243D6E00097EC7A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		D6FB12762243D6E00097EC7A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D6FB127A2243DA3C0097EC7A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		D6FB127B2243DA830097EC7A /* WebConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebConstants.h; sourceTree = "<group>"; };
 		D6FB127C2243DBDF0097EC7A /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				D6FB12752243D6E00097EC7A /* HomeViewController.swift */,
-				D6FB12762243D6E00097EC7A /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				D69709F02245B75A00A1F561 /* ProductCell.xib in Resources */,
 				D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */,
 				D69709DD224556AF00A1F561 /* FilterCell.xib in Resources */,
-				D6FB12782243D6E00097EC7A /* HomeViewController.xib in Resources */,
 				D6FB128822440D720097EC7A /* HomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

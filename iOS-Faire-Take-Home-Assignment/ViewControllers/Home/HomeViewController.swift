@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFiltersDelegate, SelectCategoryDelegate {
    
-    @IBOutlet weak var collection: UICollectionView!
+    var collection: UICollectionView!
     
     var itens: Array<Brand> = []
     var page = 1
@@ -29,9 +29,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "baseline_filter_list_black"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(filter))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        
+        collection = UICollectionView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight), collectionViewLayout: UICollectionViewFlowLayout())
+        collection.backgroundColor = UIColor.white
         collection.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         collection.delegate = self
         collection.dataSource = self
+        
+        self.view.addSubview(collection)
 
         loadItens()
     }
@@ -83,7 +91,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             self.collection.reloadData()
             
-            self.collection.setContentOffset(.zero, animated: true)
+            self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
         })
     }
     
