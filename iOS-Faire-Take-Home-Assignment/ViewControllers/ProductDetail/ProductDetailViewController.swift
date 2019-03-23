@@ -22,11 +22,23 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var longDescription: UILabel!
     @IBOutlet weak var wholesalePrice: UILabel!
     @IBOutlet weak var retailPrice: UILabel!
+    @IBOutlet weak var counter: UILabel!
     
     var product: Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        counter.isHidden = true
+        counter.layer.borderColor = UIColor.black.cgColor
+        counter.layer.borderWidth = 0.5
+        counter.layer.cornerRadius = 10.0
+        counter.layer.masksToBounds = true
+        
+        if(product.images.count > 1){
+            counter.isHidden = false
+            counter.text = String(product.images.count)
+        }
 
         name.text = product.name
         longDescription.text = product.description

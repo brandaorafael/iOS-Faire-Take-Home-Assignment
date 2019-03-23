@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailViewController" customModule="iOS_Faire_Take_Home_Assignment" customModuleProvider="target">
             <connections>
+                <outlet property="counter" destination="Ocp-hi-AhR" id="VrA-eQ-5fe"/>
                 <outlet property="imageSlideShow" destination="aVc-fS-T2S" id="cIV-x3-7Ng"/>
                 <outlet property="longDescription" destination="LPP-FA-ArK" id="n4A-mr-g97"/>
                 <outlet property="name" destination="EBy-nX-JEE" id="fCK-R8-0sZ"/>
@@ -44,6 +45,12 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-FA-ArK">
+                                    <rect key="frame" x="30" y="329" width="315" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzf-el-2Rc">
                                     <rect key="frame" x="15" y="409.5" width="345" height="26.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -56,16 +63,22 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPP-FA-ArK">
-                                    <rect key="frame" x="30" y="329" width="315" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-hi-AhR">
+                                    <rect key="frame" x="328" y="5" width="42" height="42"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="DIS-iC-h5K"/>
+                                        <constraint firstAttribute="width" constant="42" id="lVm-lW-cZX"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
+                                    <color key="highlightedColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="LPP-FA-ArK" firstAttribute="top" secondItem="EBy-nX-JEE" secondAttribute="bottom" constant="30" id="0eS-lU-yEK"/>
+                                <constraint firstItem="Ocp-hi-AhR" firstAttribute="top" secondItem="FcJ-DG-pZo" secondAttribute="top" constant="5" id="CGn-gi-fbG"/>
                                 <constraint firstAttribute="trailing" secondItem="lzf-el-2Rc" secondAttribute="trailing" constant="15" id="KHZ-hu-xhZ"/>
                                 <constraint firstItem="EBy-nX-JEE" firstAttribute="top" secondItem="aVc-fS-T2S" secondAttribute="bottom" constant="20" id="KW7-1k-re8"/>
                                 <constraint firstAttribute="trailing" secondItem="eOY-NG-7vw" secondAttribute="trailing" constant="10" id="OG1-Fi-6KP"/>
@@ -79,6 +92,7 @@
                                 <constraint firstAttribute="trailing" secondItem="aVc-fS-T2S" secondAttribute="trailing" id="iKM-Rd-ycQ"/>
                                 <constraint firstItem="aVc-fS-T2S" firstAttribute="top" secondItem="FcJ-DG-pZo" secondAttribute="top" id="lL6-PS-VLT"/>
                                 <constraint firstItem="eOY-NG-7vw" firstAttribute="leading" secondItem="FcJ-DG-pZo" secondAttribute="leading" constant="15" id="obg-ei-u9r"/>
+                                <constraint firstAttribute="trailing" secondItem="Ocp-hi-AhR" secondAttribute="trailing" constant="5" id="svA-cZ-nUI"/>
                                 <constraint firstItem="LPP-FA-ArK" firstAttribute="leading" secondItem="FcJ-DG-pZo" secondAttribute="leading" constant="30" id="xBI-q9-7fT"/>
                                 <constraint firstItem="lzf-el-2Rc" firstAttribute="top" secondItem="eOY-NG-7vw" secondAttribute="bottom" constant="15" id="yY0-aT-sJ1"/>
                             </constraints>
