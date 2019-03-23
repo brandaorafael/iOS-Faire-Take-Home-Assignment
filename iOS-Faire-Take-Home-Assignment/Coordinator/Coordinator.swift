@@ -37,4 +37,9 @@ class Coordinator {
         self.navigateToViewController(newVC: VC, context: context)
     }
     
+    static func goToProductDetail(context:UIViewController, product: Product){
+        let VC = ProductDetailViewController.initWith(product: product) as ProductDetailViewController
+        self.navigateToViewController(newVC: VC, context: context)
+    }
+    
 }

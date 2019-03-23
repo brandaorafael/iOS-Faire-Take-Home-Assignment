@@ -47,6 +47,10 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
         return products.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Coordinator.goToProductDetail(context: self.navigationController!, product: products[indexPath.row])
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
