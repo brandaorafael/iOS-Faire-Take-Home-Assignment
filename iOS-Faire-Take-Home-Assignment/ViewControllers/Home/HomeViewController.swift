@@ -16,9 +16,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var page = 1
     
     var leadtimeIndex:Int?
-    var makerValuesArr = Array<String>.init()
     
-    var makerValuesSelected = [false, false, false, false, false]
+    var makerValuesSelected = Array(repeating: false, count: 5)
     
     var category:String?
 

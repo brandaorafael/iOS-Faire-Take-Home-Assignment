@@ -20,9 +20,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     var leadTimeIndex:Int?
     let leadtimeArr = ["Under 14 days", "Under 9 days", "Under 6 days", "Under 3 days"]
-    var leadtimeSelected = [false, false, false, false]
+    var leadtimeSelected = Array(repeating: false, count: 4)
     let makerValuesArr = ["Charitable", "Eco-friendly", "Not Sold On Amazon", "Handmade", "Made in USA"]
-    var makerValuesSelected = [false, false, false, false, false]
+    var makerValuesSelected =  Array<Bool>.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +90,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
             makerValuesSelected[indexPath.row] = !makerValuesSelected[indexPath.row]
         } else {
             if(leadtimeSelected[indexPath.row] == true){
-                leadtimeSelected = [false, false, false, false]
+                leadtimeSelected = Array(repeating: false, count: leadtimeArr.count)
             } else {
-                leadtimeSelected = [false, false, false, false]
+                leadtimeSelected = Array(repeating: false, count: leadtimeArr.count)
                 leadtimeSelected[indexPath.row] = true
             }
         }
