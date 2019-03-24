@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFiltersDelegate, SelectCategoryDelegate {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFiltersDelegate, SelectCategoryDelegate, UIPopoverPresentationControllerDelegate {
    
     var collection: UICollectionView!
     

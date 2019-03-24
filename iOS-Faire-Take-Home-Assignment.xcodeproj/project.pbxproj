@@ -28,6 +28,8 @@
 		D6970A002247B12700A1F561 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709FF2247B12700A1F561 /* Helper.swift */; };
 		D6970A082247C24E00A1F561 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6970A072247C24E00A1F561 /* WebServices.swift */; };
 		D6970A162247C28700A1F561 /* WebServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6970A152247C28700A1F561 /* WebServicesTests.swift */; };
+		D6970A202247E17500A1F561 /* ModalProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6970A1E2247E17500A1F561 /* ModalProductViewController.swift */; };
+		D6970A212247E17500A1F561 /* ModalProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6970A1F2247E17500A1F561 /* ModalProductViewController.xib */; };
 		D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12462243D4E30097EC7A /* AppDelegate.swift */; };
 		D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12482243D4E30097EC7A /* ViewController.swift */; };
 		D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FB124A2243D4E30097EC7A /* Main.storyboard */; };
@@ -107,6 +109,8 @@
 		D6970A132247C28700A1F561 /* WebServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6970A152247C28700A1F561 /* WebServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesTests.swift; sourceTree = "<group>"; };
 		D6970A172247C28700A1F561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6970A1E2247E17500A1F561 /* ModalProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProductViewController.swift; sourceTree = "<group>"; };
+		D6970A1F2247E17500A1F561 /* ModalProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalProductViewController.xib; sourceTree = "<group>"; };
 		D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Faire-Take-Home-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FB12462243D4E30097EC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FB12482243D4E30097EC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +312,15 @@
 			path = WebServicesTests;
 			sourceTree = "<group>";
 		};
+		D6970A1D2247E14E00A1F561 /* ModalProduct */ = {
+			isa = PBXGroup;
+			children = (
+				D6970A1E2247E17500A1F561 /* ModalProductViewController.swift */,
+				D6970A1F2247E17500A1F561 /* ModalProductViewController.xib */,
+			);
+			path = ModalProduct;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +388,7 @@
 		D6FB12742243D68B0097EC7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6970A1D2247E14E00A1F561 /* ModalProduct */,
 				D69709F52245D05300A1F561 /* ProductDetail */,
 				D69709E52245B54600A1F561 /* Products */,
 				D69709E222457EDF00A1F561 /* Categories */,
@@ -588,6 +602,7 @@
 				D6FB124E2243D4E40097EC7A /* Assets.xcassets in Resources */,
 				D69709F02245B75A00A1F561 /* ProductCell.xib in Resources */,
 				D69709F92245D08B00A1F561 /* ProductDetailViewController.xib in Resources */,
+				D6970A212247E17500A1F561 /* ModalProductViewController.xib in Resources */,
 				D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */,
 				D69709DD224556AF00A1F561 /* FilterCell.xib in Resources */,
 				D6FB128822440D720097EC7A /* HomeCell.xib in Resources */,
@@ -724,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6970A202247E17500A1F561 /* ModalProductViewController.swift in Sources */,
 				D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */,
 				D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */,
 				D69709E72245B58C00A1F561 /* ProductsViewController.swift in Sources */,

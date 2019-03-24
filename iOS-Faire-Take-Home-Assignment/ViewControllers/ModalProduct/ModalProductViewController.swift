@@ -1,29 +1,26 @@
 //
-//  ProductCell.swift
+//  ModalProductViewController.swift
 //  iOS-Faire-Take-Home-Assignment
 //
-//  Created by Rafael Brandão on 22/03/2019.
+//  Created by Rafael Brandão on 24/03/2019.
 //  Copyright © 2019 Rafael Brandão. All rights reserved.
 //
 
 import UIKit
 
-class ProductCell: UICollectionViewCell {
+class ModalProductViewController: UIViewController {
     
     @IBOutlet weak var background:UIImageView!
     @IBOutlet weak var name:UILabel!
-    @IBOutlet weak var price:UILabel!
+    @IBOutlet weak var shortDescription:UILabel!
     
     var product:Product!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func setProduct(product: Product) {
-        
-        self.product = product
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        name.text = product.name
+        shortDescription.text = product.shortDescription
         
         if(product.images.count > 1){
             if let url = product.images[1].url {
@@ -34,11 +31,14 @@ class ProductCell: UICollectionViewCell {
                 background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
             }
         }
+    }
+
+    static func initWith(product: Product) -> ModalProductViewController {
+        let vc = ModalProductViewController(nibName: "ModalProductViewController", bundle: nil)
         
-        self.name.text = product.name
-        if let wholesalePriceCents = product.wholesalePriceCents {
-            price.text = "Wholesale $" + String(wholesalePriceCents/100)
-        }
+        vc.product = product
+        
+        return vc
     }
 
 }
