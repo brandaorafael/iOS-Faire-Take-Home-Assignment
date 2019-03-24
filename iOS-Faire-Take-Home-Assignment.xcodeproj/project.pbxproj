@@ -334,6 +334,15 @@
 			path = ModalBrand;
 			sourceTree = "<group>";
 		};
+		D6970A272247F93200A1F561 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				D6970A222247F43000A1F561 /* ModalBrand */,
+				D6970A1D2247E14E00A1F561 /* ModalProduct */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
@@ -401,8 +410,7 @@
 		D6FB12742243D68B0097EC7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6970A222247F43000A1F561 /* ModalBrand */,
-				D6970A1D2247E14E00A1F561 /* ModalProduct */,
+				D6970A272247F93200A1F561 /* Modals */,
 				D69709F52245D05300A1F561 /* ProductDetail */,
 				D69709E52245B54600A1F561 /* Products */,
 				D69709E222457EDF00A1F561 /* Categories */,

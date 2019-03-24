@@ -31,17 +31,31 @@ class iOS_Faire_Take_Home_AssignmentUITests: XCTestCase {
 
     func testCategories() {
         
-        let app = XCUIApplication()
-        let baselineFilterListBlackButton = app.navigationBars["Brands"].buttons["baseline filter list black"]
-        baselineFilterListBlackButton.tap()
         
-        let categoriesStaticText = app.tables/*@START_MENU_TOKEN@*/.cells.staticTexts["Categories"]/*[[".cells.staticTexts[\"Categories\"]",".staticTexts[\"Categories\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/
-        categoriesStaticText.tap()
-        let item = app.navigationBars["iOS_Faire_Take_Home_Assignment.CategoriesView"].buttons["baseline check black"]
-        item.tap()
-        app.navigationBars["iOS_Faire_Take_Home_Assignment.PreFilterView"].buttons["Brands"].tap()
-        baselineFilterListBlackButton.tap()
-        categoriesStaticText.tap()
+        let app = XCUIApplication()
+        app.navigationBars["Brands"].buttons["baseline filter list black"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Categories"]/*[[".cells.staticTexts[\"Categories\"]",".staticTexts[\"Categories\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["iOS_Faire_Take_Home_Assignment.CategoriesView"].buttons["baseline check black"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Filters"]/*[[".cells.staticTexts[\"Filters\"]",".staticTexts[\"Filters\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let under14DaysStaticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Under 14 days"]/*[[".cells.staticTexts[\"Under 14 days\"]",".staticTexts[\"Under 14 days\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        under14DaysStaticText.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Under 9 days"]/*[[".cells.staticTexts[\"Under 9 days\"]",".staticTexts[\"Under 9 days\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Under 6 days"]/*[[".cells.staticTexts[\"Under 6 days\"]",".staticTexts[\"Under 6 days\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Charitable"]/*[[".cells.staticTexts[\"Charitable\"]",".staticTexts[\"Charitable\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Eco-friendly"]/*[[".cells.staticTexts[\"Eco-friendly\"]",".staticTexts[\"Eco-friendly\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Handmade"]/*[[".cells.staticTexts[\"Handmade\"]",".staticTexts[\"Handmade\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["iOS_Faire_Take_Home_Assignment.FilterView"].buttons["baseline check black"].tap()
+        
         
         
         

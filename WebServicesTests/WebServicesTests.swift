@@ -72,11 +72,6 @@ class WebServicesTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
-    
-    
-    //    getMakersWithFilters
-    //    getMakerProducts
-    
     func testGetMakerProducts() {
         
         let promise = expectation(description: "Got Products")
