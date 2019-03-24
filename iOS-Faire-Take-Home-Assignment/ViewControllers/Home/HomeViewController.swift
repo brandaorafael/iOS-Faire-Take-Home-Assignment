@@ -89,13 +89,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         page = 1
         
-        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
+        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                Helper.apiError(navigation: self.navigationController!)
+            } else {
+                self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
+                
+                self.collection.reloadData()
+                
+                self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
+            }
             
-            self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
-            
-            self.collection.reloadData()
-            
-            self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
         })
     }
     
@@ -108,10 +112,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
-            self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
-            
-            self.collection.reloadData()
+        WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                Helper.apiError(navigation: self.navigationController!)
+            } else {
+                self.itens += Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
+                
+                self.collection.reloadData()
+            }
         })
     }
     

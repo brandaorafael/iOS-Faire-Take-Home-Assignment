@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1010"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6FB12422243D4E20097EC7A"
+               BuildableName = "iOS-Faire-Take-Home-Assignment.app"
+               BlueprintName = "iOS-Faire-Take-Home-Assignment"
+               ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6FB12562243D4E40097EC7A"
+               BuildableName = "iOS-Faire-Take-Home-AssignmentTests.xctest"
+               BlueprintName = "iOS-Faire-Take-Home-AssignmentTests"
+               ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6FB12612243D4E40097EC7A"
+               BuildableName = "iOS-Faire-Take-Home-AssignmentUITests.xctest"
+               BlueprintName = "iOS-Faire-Take-Home-AssignmentUITests"
+               ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6970A122247C28700A1F561"
+               BuildableName = "WebServicesTests.xctest"
+               BlueprintName = "WebServicesTests"
+               ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D6FB12422243D4E20097EC7A"
+            BuildableName = "iOS-Faire-Take-Home-Assignment.app"
+            BlueprintName = "iOS-Faire-Take-Home-Assignment"
+            ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D6FB12422243D4E20097EC7A"
+            BuildableName = "iOS-Faire-Take-Home-Assignment.app"
+            BlueprintName = "iOS-Faire-Take-Home-Assignment"
+            ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D6FB12422243D4E20097EC7A"
+            BuildableName = "iOS-Faire-Take-Home-Assignment.app"
+            BlueprintName = "iOS-Faire-Take-Home-Assignment"
+            ReferencedContainer = "container:iOS-Faire-Take-Home-Assignment.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

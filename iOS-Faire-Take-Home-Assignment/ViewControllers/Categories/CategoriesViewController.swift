@@ -38,8 +38,8 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         myTableView.delegate = self
         self.view.addSubview(myTableView)
         
-        WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>) in
-            if(result.count == 0){
+        WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
                 Helper.apiError(navigation: self.navigationController!)
             } else {
                 self.categories = Category.createCategoryArray(array: result["result"] as! Array<Dictionary<String, Any>>)

@@ -26,6 +26,8 @@
 		D69709FB2246634D00A1F561 /* ImageSlideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69709FA2246634D00A1F561 /* ImageSlideshow.framework */; };
 		D69709FD2246635100A1F561 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69709FC2246635100A1F561 /* SDWebImage.framework */; };
 		D6970A002247B12700A1F561 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709FF2247B12700A1F561 /* Helper.swift */; };
+		D6970A082247C24E00A1F561 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6970A072247C24E00A1F561 /* WebServices.swift */; };
+		D6970A162247C28700A1F561 /* WebServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6970A152247C28700A1F561 /* WebServicesTests.swift */; };
 		D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12462243D4E30097EC7A /* AppDelegate.swift */; };
 		D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12482243D4E30097EC7A /* ViewController.swift */; };
 		D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FB124A2243D4E30097EC7A /* Main.storyboard */; };
@@ -42,6 +44,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D6970A0A2247C24E00A1F561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6FB123B2243D4E20097EC7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6FB12422243D4E20097EC7A;
+			remoteInfo = "iOS-Faire-Take-Home-Assignment";
+		};
+		D6970A182247C28700A1F561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6FB123B2243D4E20097EC7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6FB12422243D4E20097EC7A;
+			remoteInfo = "iOS-Faire-Take-Home-Assignment";
+		};
 		D6FB12582243D4E40097EC7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D6FB123B2243D4E20097EC7A /* Project object */;
@@ -85,6 +101,12 @@
 		D69709FA2246634D00A1F561 /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69709FC2246635100A1F561 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69709FF2247B12700A1F561 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D6970A052247C24D00A1F561 /* WebServices.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServices.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6970A072247C24E00A1F561 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		D6970A092247C24E00A1F561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6970A132247C28700A1F561 /* WebServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6970A152247C28700A1F561 /* WebServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesTests.swift; sourceTree = "<group>"; };
+		D6970A172247C28700A1F561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Faire-Take-Home-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FB12462243D4E30097EC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FB12482243D4E30097EC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +131,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D6970A022247C24D00A1F561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6970A102247C28700A1F561 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6FB12402243D4E20097EC7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,12 +290,32 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D6970A062247C24E00A1F561 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				D6970A072247C24E00A1F561 /* WebServices.swift */,
+				D6970A092247C24E00A1F561 /* Info.plist */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		D6970A142247C28700A1F561 /* WebServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6970A152247C28700A1F561 /* WebServicesTests.swift */,
+				D6970A172247C28700A1F561 /* Info.plist */,
+			);
+			path = WebServicesTests;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
 				D6FB12452243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */,
 				D6FB125A2243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentTests */,
 				D6FB12652243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentUITests */,
+				D6970A062247C24E00A1F561 /* WebServices */,
+				D6970A142247C28700A1F561 /* WebServicesTests */,
 				D6FB12442243D4E20097EC7A /* Products */,
 				206C9AC7D396ED5045224119 /* Pods */,
 				57AE472D01C6147A6B3A6C12 /* Frameworks */,
@@ -272,6 +328,8 @@
 				D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */,
 				D6FB12572243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentTests.xctest */,
 				D6FB12622243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentUITests.xctest */,
+				D6970A052247C24D00A1F561 /* WebServices.xctest */,
+				D6970A132247C28700A1F561 /* WebServicesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +419,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D6970A042247C24D00A1F561 /* WebServices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6970A0C2247C24E00A1F561 /* Build configuration list for PBXNativeTarget "WebServices" */;
+			buildPhases = (
+				D6970A012247C24D00A1F561 /* Sources */,
+				D6970A022247C24D00A1F561 /* Frameworks */,
+				D6970A032247C24D00A1F561 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6970A0B2247C24E00A1F561 /* PBXTargetDependency */,
+			);
+			name = WebServices;
+			productName = WebServices;
+			productReference = D6970A052247C24D00A1F561 /* WebServices.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D6970A122247C28700A1F561 /* WebServicesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6970A1A2247C28700A1F561 /* Build configuration list for PBXNativeTarget "WebServicesTests" */;
+			buildPhases = (
+				D6970A0F2247C28700A1F561 /* Sources */,
+				D6970A102247C28700A1F561 /* Frameworks */,
+				D6970A112247C28700A1F561 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6970A192247C28700A1F561 /* PBXTargetDependency */,
+			);
+			name = WebServicesTests;
+			productName = WebServicesTests;
+			productReference = D6970A132247C28700A1F561 /* WebServicesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D6FB12422243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6FB126B2243D4E40097EC7A /* Build configuration list for PBXNativeTarget "iOS-Faire-Take-Home-Assignment" */;
@@ -428,6 +522,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Rafael Brandão";
 				TargetAttributes = {
+					D6970A042247C24D00A1F561 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D6FB12422243D4E20097EC7A;
+					};
+					D6970A122247C28700A1F561 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D6FB12422243D4E20097EC7A;
+					};
 					D6FB12422243D4E20097EC7A = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -457,11 +559,27 @@
 				D6FB12422243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */,
 				D6FB12562243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentTests */,
 				D6FB12612243D4E40097EC7A /* iOS-Faire-Take-Home-AssignmentUITests */,
+				D6970A042247C24D00A1F561 /* WebServices */,
+				D6970A122247C28700A1F561 /* WebServicesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D6970A032247C24D00A1F561 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6970A112247C28700A1F561 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6FB12412243D4E20097EC7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +704,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D6970A012247C24D00A1F561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6970A082247C24E00A1F561 /* WebServices.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6970A0F2247C28700A1F561 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6970A162247C28700A1F561 /* WebServicesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6FB123F2243D4E20097EC7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +765,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D6970A0B2247C24E00A1F561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6FB12422243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */;
+			targetProxy = D6970A0A2247C24E00A1F561 /* PBXContainerItemProxy */;
+		};
+		D6970A192247C28700A1F561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6FB12422243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */;
+			targetProxy = D6970A182247C28700A1F561 /* PBXContainerItemProxy */;
+		};
 		D6FB12592243D4E40097EC7A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D6FB12422243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */;
@@ -663,6 +807,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D6970A0D2247C24E00A1F561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MXKT7BP45;
+				INFOPLIST_FILE = WebServices/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rafaelbrandao.WebServices;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-Faire-Take-Home-Assignment.app/iOS-Faire-Take-Home-Assignment";
+			};
+			name = Debug;
+		};
+		D6970A0E2247C24E00A1F561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MXKT7BP45;
+				INFOPLIST_FILE = WebServices/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rafaelbrandao.WebServices;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-Faire-Take-Home-Assignment.app/iOS-Faire-Take-Home-Assignment";
+			};
+			name = Release;
+		};
+		D6970A1B2247C28700A1F561 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MXKT7BP45;
+				INFOPLIST_FILE = WebServicesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rafaelbrandao.WebServicesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-Faire-Take-Home-Assignment.app/iOS-Faire-Take-Home-Assignment";
+			};
+			name = Debug;
+		};
+		D6970A1C2247C28700A1F561 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MXKT7BP45;
+				INFOPLIST_FILE = WebServicesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rafaelbrandao.WebServicesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-Faire-Take-Home-Assignment.app/iOS-Faire-Take-Home-Assignment";
+			};
+			name = Release;
+		};
 		D6FB12692243D4E40097EC7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -914,6 +1138,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D6970A0C2247C24E00A1F561 /* Build configuration list for PBXNativeTarget "WebServices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6970A0D2247C24E00A1F561 /* Debug */,
+				D6970A0E2247C24E00A1F561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6970A1A2247C28700A1F561 /* Build configuration list for PBXNativeTarget "WebServicesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6970A1B2247C28700A1F561 /* Debug */,
+				D6970A1C2247C28700A1F561 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D6FB123E2243D4E20097EC7A /* Build configuration list for PBXProject "iOS-Faire-Take-Home-Assignment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

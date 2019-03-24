@@ -9,7 +9,7 @@
 import Foundation
 
 class WebService {
-    public typealias ASServiceBlock = (_ result: Dictionary<String, Any>) -> Void
+    public typealias ASServiceBlock = (_ result: Dictionary<String, Any>, _ error:Error?) -> Void
     
     static func getAvailableCategories(serviceBlock: @escaping ASServiceBlock) {
         let str = BASE_URL + CATEGORY

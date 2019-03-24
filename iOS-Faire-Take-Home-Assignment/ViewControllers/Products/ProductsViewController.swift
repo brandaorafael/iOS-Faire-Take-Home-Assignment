@@ -76,12 +76,16 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
     func loadItens(){
         
         if let token = brand.token {
-            WebService.getMakerProducts(brand: token, serviceBlock: { (result: Dictionary<String, Any>) in
-                self.products = Product.createProductsArray(array: result["result"] as! Array<Dictionary<String, Any>>)
-                
-                self.collection.reloadData()
-                
-                self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
+            WebService.getMakerProducts(brand: token, serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+                if(error != nil){
+                    Helper.apiError(navigation: self.navigationController!)
+                } else {
+                    self.products = Product.createProductsArray(array: result["result"] as! Array<Dictionary<String, Any>>)
+                    
+                    self.collection.reloadData()
+                    
+                    self.collection.setContentOffset(CGPoint.init(x: 0, y: -(UIApplication.shared.statusBarFrame.size.height)), animated: true)
+                }
             })
         } else {
             Helper.apiError(navigation: self.navigationController!)

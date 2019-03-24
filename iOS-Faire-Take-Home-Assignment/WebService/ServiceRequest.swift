@@ -10,7 +10,7 @@ import Foundation
 
 class ServiceRequest {
     
-    public typealias ASServiceBlock = (_ result: Dictionary<String, Any>) -> Void
+    public typealias ASServiceBlock = (_ result: Dictionary<String, Any>, _ error:Error?) -> Void
     
     static func request(urlString: String, method: String, body: Dictionary<String, Any>?) -> NSMutableURLRequest {
         //With URLEncoding
@@ -18,7 +18,7 @@ class ServiceRequest {
         //        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
         //Without URLEncoding
-        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 60.0 )
+        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 10.0 )
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if(body != nil){
             if(!(body?.isEmpty)!){
@@ -41,15 +41,13 @@ class ServiceRequest {
                     //                    NSError *errorResult = nil;
                     if ((errorResponse) != nil) {
                         let result = Dictionary<String, Any>()
-                        //                        result["com.rafaelbrandao.status"] = String.localizedStringWithFormat("%s", (errorResponse?.localizedDescription)!)
-                        //                        result["message"] = "Error! no Connection!"
-                        serviceblock(result);
+                        serviceblock(result, errorResponse);
                         return;
                     }
                     if(object){
                         do {
                             let result = try JSONSerialization.jsonObject(with: responseData!, options: .allowFragments) as? [String: Any]
-                            serviceblock(result!);
+                            serviceblock(result!, errorResponse);
                         } catch let e {
                             print(e)
                         }
@@ -57,7 +55,7 @@ class ServiceRequest {
                         do {
                             let result = try JSONSerialization.jsonObject(with: responseData!, options: []
                                 ) as? [Any]
-                            serviceblock(["result": result!]);
+                            serviceblock(["result": result!], errorResponse);
                         } catch let e {
                             print(e)
                         }
