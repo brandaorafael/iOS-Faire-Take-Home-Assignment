@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFiltersDelegate, SelectCategoryDelegate, UIPopoverPresentationControllerDelegate {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SelectFiltersDelegate, SelectCategoryDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate {
    
     var collection: UICollectionView!
     
@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var makerValuesSelected = Array(repeating: false, count: 5)
     
     var category:String?
+    
+    var lpgr: UILongPressGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collection.dataSource = self
         
         self.view.addSubview(collection)
+        
+        lpgr = UILongPressGestureRecognizer.init(target: self, action:#selector(openModal));
+        collection.addGestureRecognizer(lpgr);
 
         loadItens()
     }
@@ -144,5 +149,37 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func selectedCategory(category: String?) {
         self.category = category
         loadItens()
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    @IBAction func openModal(gesture : UILongPressGestureRecognizer!) {
+        if (gesture.state == .began)
+        {
+            let p = gesture.location(in: collection)
+            
+            if let indexPath = self.collection.indexPathForItem(at: p) {
+                // get the cell at indexPath (the one you long pressed)
+                let cell = self.collection.cellForItem(at: indexPath) as! HomeCell
+                // do stuff with the cell
+                
+                let home = ModalBrandViewController.initWith(brand: cell.brand)
+                home.preferredContentSize = CGSize.init(width: 400, height: 400)
+                home.modalPresentationStyle = .popover
+                let popover = home.popoverPresentationController!
+                popover.delegate = self
+                popover.permittedArrowDirections = .up
+                popover.sourceRect =  CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                popover.sourceView = self.view
+                
+                present(home, animated: true, completion: nil)
+            }
+        } else if (gesture.state == .ended)
+        {
+            dismiss(animated: true, completion: nil)
+            
+        }
     }
 }

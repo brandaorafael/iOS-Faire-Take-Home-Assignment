@@ -1,28 +1,26 @@
 //
-//  HomeCell.swift
+//  ModalBrandViewController.swift
 //  iOS-Faire-Take-Home-Assignment
 //
-//  Created by Rafael Brandão on 21/03/2019.
+//  Created by Rafael Brandão on 24/03/2019.
 //  Copyright © 2019 Rafael Brandão. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class HomeCell: UICollectionViewCell {
-    
+class ModalBrandViewController: UIViewController {
+
     @IBOutlet weak var background:UIImageView!
     @IBOutlet weak var name:UILabel!
+    @IBOutlet weak var shortDescription:UILabel!
     
     var brand:Brand!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
-    func setBrand(brand: Brand) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.brand = brand
+        name.text = brand.name
+        shortDescription.text = brand.shortDescription
         
         if(brand.images.count > 1){
             if let url = brand.images[1].url {
@@ -33,8 +31,14 @@ class HomeCell: UICollectionViewCell {
                 background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
             }
         }
+    }
+    
+    static func initWith(brand: Brand) -> ModalBrandViewController {
+        let vc = ModalBrandViewController(nibName: "ModalBrandViewController", bundle: nil)
         
-        self.name.text = brand.name
+        vc.brand = brand
+        
+        return vc
     }
 
 }
