@@ -19,21 +19,92 @@ class WebServicesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-//    getMakersWithFilters
-//    getMakerProducts
-
-    func testgetAvailableCategories() {
+    func testDispatchServiceSuccess() {
         
-        let promise = expectation(description: "Got Categories")
+        let promise = expectation(description: "Got no errors")
         
-        WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>) in
-            if(result.count == 0){
-                XCTFail("Categories returned empty")
+        let str = "https://jsonplaceholder.typicode.com/todos/1"
+        
+        let request = ServiceRequest.request(urlString: str, method: "GET", body: nil)
+        
+        ServiceRequest.dispatchService(object:true, serviceRequest: request, serviceblock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                XCTFail("Service error!")
             } else {
                 promise.fulfill()
             }
         })
-        waitForExpectations(timeout: 5, handler: nil)
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testDispatchServiceError() {
+        
+        let promise = expectation(description: "Got errors")
+        
+        let str = "https://jsonplaceholder"
+        
+        let request = ServiceRequest.request(urlString: str, method: "GET", body: nil)
+        
+        ServiceRequest.dispatchService(object:true, serviceRequest: request, serviceblock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                promise.fulfill()
+            } else {
+                XCTFail("Service error!")
+            }
+        })
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetAvailableCategories() {
+        
+        let promise = expectation(description: "Got Categories")
+        
+        WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                XCTFail("Service error!")
+            } else {
+                promise.fulfill()
+            }
+        })
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    
+    
+    //    getMakersWithFilters
+    //    getMakerProducts
+    
+    func testGetMakerProducts() {
+        
+        let promise = expectation(description: "Got Products")
+        
+        WebService.getMakerProducts(brand: "b_f0fbd5c7", serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                XCTFail("Service error!")
+            } else {
+                promise.fulfill()
+            }
+        })
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetMakersWithFilters() {
+        
+        let promise = expectation(description: "Got Makers")
+        
+        WebService.getMakersWithFilters(leadTime: nil, makerValues: [], page: 1, category: nil, serviceBlock: { (result: Dictionary<String, Any>, error:Error?) in
+            if(error != nil){
+                XCTFail("Service error!")
+            } else {
+                promise.fulfill()
+            }
+        })
+        
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testPerformanceExample() {

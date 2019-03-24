@@ -38,7 +38,6 @@ class ServiceRequest {
         DispatchQueue.global(qos: .userInitiated).async {
             let task = URLSession.shared.dataTask(with: serviceRequest as URLRequest, completionHandler: { (responseData: Data?, responseCode: URLResponse?, errorResponse: Error?) in
                 DispatchQueue.main.async {
-                    //                    NSError *errorResult = nil;
                     if ((errorResponse) != nil) {
                         let result = Dictionary<String, Any>()
                         serviceblock(result, errorResponse);
