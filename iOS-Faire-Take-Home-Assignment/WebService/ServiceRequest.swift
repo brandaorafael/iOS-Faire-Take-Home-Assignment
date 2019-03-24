@@ -23,7 +23,7 @@ class ServiceRequest {
         if(body != nil){
             if(!(body?.isEmpty)!){
                 do{
-                    request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+                    request.httpBody = try JSONSerialization.data(withJSONObject: body as Any, options: .prettyPrinted)
                 } catch let error {
                     print(error.localizedDescription)
                 }
@@ -40,7 +40,7 @@ class ServiceRequest {
                 DispatchQueue.main.async {
                     //                    NSError *errorResult = nil;
                     if ((errorResponse) != nil) {
-                        var result = Dictionary<String, Any>()
+                        let result = Dictionary<String, Any>()
                         //                        result["com.rafaelbrandao.status"] = String.localizedStringWithFormat("%s", (errorResponse?.localizedDescription)!)
                         //                        result["message"] = "Error! no Connection!"
                         serviceblock(result);

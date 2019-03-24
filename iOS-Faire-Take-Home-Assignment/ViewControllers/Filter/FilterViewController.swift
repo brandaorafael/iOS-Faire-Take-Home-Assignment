@@ -19,9 +19,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     var delegate: SelectFiltersDelegate!
     
     var leadTimeIndex:Int?
-    let leadtimeArr = ["FOURTEEN_OR_LESS_DAYS", "NINE_OR_LESS_DAYS", "SIX_OR_LESS_DAYS", "THREE_OR_LESS_DAYS"]
+    let leadtimeArr = ["Under 14 days", "Under 9 days", "Under 6 days", "Under 3 days"]
     var leadtimeSelected = [false, false, false, false]
-    let makerValuesArr = ["CHARITABLE", "ECO_FRIENDLY", "NOT_SOLD_ON_AMAZON", "HAND_MADE", "MADE_IN_USA"]
+    let makerValuesArr = ["Charitable", "Eco-friendly", "Not Sold On Amazon", "Handmade", "Made in USA"]
     var makerValuesSelected = [false, false, false, false, false]
 
     override func viewDidLoad() {

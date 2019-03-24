@@ -9,16 +9,14 @@
 import Foundation
 
 class Image {
-    var token: String
-    var url: String
+    var token: String?
+    var url: String?
     var type: String?
     
     init(dic: Dictionary<String, Any>){
-        self.token = dic["token"] as! String
-        self.url = dic["url"] as! String
-        if let type = dic["type"] as? String {
-            self.type = type
-        }
+        self.token = dic["token"] as? String
+        self.url = dic["url"] as? String
+        self.type = dic["type"] as? String
     }
     
     static func createImageArray(array: Array<Dictionary<String, Any>>) -> Array<Image> {

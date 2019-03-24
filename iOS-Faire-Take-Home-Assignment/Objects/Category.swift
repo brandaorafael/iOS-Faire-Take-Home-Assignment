@@ -10,11 +10,11 @@ import Foundation
 
 class Category {
     
-    var name: String
+    var name: String?
 //    var subCategories:Array<Category>
     
     init(dic: Dictionary<String, Any>){
-        self.name = dic["name"] as! String
+        self.name = dic["name"] as? String
         
 //        self.subCategories = Category.createCategoryArray(array: dic["sub_categories"] as! Array<Dictionary<String, Any>>)
         

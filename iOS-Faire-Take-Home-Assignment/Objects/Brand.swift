@@ -10,19 +10,19 @@ import Foundation
 
 class Brand {
     
-    var token: String
-    var name: String
-    var shortDescription: String
-    var description: String
-    var url: String
+    var token: String?
+    var name: String?
+    var shortDescription: String?
+    var description: String?
+    var url: String?
     var images: Array<Image>
     
     init(dic: Dictionary<String, Any>){
-        self.token = dic["token"] as! String
-        self.name = dic["name"] as! String
-        self.shortDescription = dic["short_description"] as! String
-        self.description = dic["description"] as! String
-        self.url = dic["url"] as! String
+        self.token = dic["token"] as? String
+        self.name = dic["name"] as? String
+        self.shortDescription = dic["short_description"] as? String
+        self.description = dic["description"] as? String
+        self.url = dic["url"] as? String
         
         self.images = Image.createImageArray(array: dic["images"] as! Array<Dictionary<String, Any>>)
         

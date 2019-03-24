@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		276141CDD1622D4363F5831C /* Pods_iOS_Faire_Take_Home_AssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2575D034ADBC30917EED8A41 /* Pods_iOS_Faire_Take_Home_AssignmentUITests.framework */; };
 		292F777597B4155551B3DB13 /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C218F382DE4A12A1B05BCD /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework */; };
-		49FF2511D9C5BE02FEEB1871 /* Pods_iOS_Faire_Take_Home_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8B25CC3814101C83B5A95 /* Pods_iOS_Faire_Take_Home_Assignment.framework */; };
 		D64E52BA2244334B00CFF041 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52B92244334B00CFF041 /* Coordinator.swift */; };
 		D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E52BD224433ED00CFF041 /* PreFilterViewController.swift */; };
 		D69709D92245547200A1F561 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709D82245547200A1F561 /* FilterViewController.swift */; };
@@ -24,6 +23,9 @@
 		D69709F42245BBDE00A1F561 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709F32245BBDE00A1F561 /* Image.swift */; };
 		D69709F82245D08B00A1F561 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709F62245D08B00A1F561 /* ProductDetailViewController.swift */; };
 		D69709F92245D08B00A1F561 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69709F72245D08B00A1F561 /* ProductDetailViewController.xib */; };
+		D69709FB2246634D00A1F561 /* ImageSlideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69709FA2246634D00A1F561 /* ImageSlideshow.framework */; };
+		D69709FD2246635100A1F561 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69709FC2246635100A1F561 /* SDWebImage.framework */; };
+		D6970A002247B12700A1F561 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69709FF2247B12700A1F561 /* Helper.swift */; };
 		D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12462243D4E30097EC7A /* AppDelegate.swift */; };
 		D6FB12492243D4E30097EC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FB12482243D4E30097EC7A /* ViewController.swift */; };
 		D6FB124C2243D4E30097EC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FB124A2243D4E30097EC7A /* Main.storyboard */; };
@@ -80,6 +82,9 @@
 		D69709F32245BBDE00A1F561 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D69709F62245D08B00A1F561 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D69709F72245D08B00A1F561 /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		D69709FA2246634D00A1F561 /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69709FC2246635100A1F561 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69709FF2247B12700A1F561 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		D6FB12432243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Faire-Take-Home-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FB12462243D4E30097EC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FB12482243D4E30097EC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FF2511D9C5BE02FEEB1871 /* Pods_iOS_Faire_Take_Home_Assignment.framework in Frameworks */,
+				D69709FD2246635100A1F561 /* SDWebImage.framework in Frameworks */,
+				D69709FB2246634D00A1F561 /* ImageSlideshow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,8 @@
 		57AE472D01C6147A6B3A6C12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D69709FC2246635100A1F561 /* SDWebImage.framework */,
+				D69709FA2246634D00A1F561 /* ImageSlideshow.framework */,
 				07F8B25CC3814101C83B5A95 /* Pods_iOS_Faire_Take_Home_Assignment.framework */,
 				D2C218F382DE4A12A1B05BCD /* Pods_iOS_Faire_Take_Home_AssignmentTests.framework */,
 				2575D034ADBC30917EED8A41 /* Pods_iOS_Faire_Take_Home_AssignmentUITests.framework */,
@@ -238,6 +246,14 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
+		D69709FE2247B0FC00A1F561 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D69709FF2247B12700A1F561 /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D6FB123A2243D4E20097EC7A = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +279,7 @@
 		D6FB12452243D4E20097EC7A /* iOS-Faire-Take-Home-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				D69709FE2247B0FC00A1F561 /* Helpers */,
 				D64E52B82244332E00CFF041 /* Coordinator */,
 				D6FB128922440ED30097EC7A /* Objects */,
 				D6FB128022440AA40097EC7A /* View */,
@@ -581,6 +598,7 @@
 				D6FB127D2243DBDF0097EC7A /* ServiceRequest.swift in Sources */,
 				D69709D92245547200A1F561 /* FilterViewController.swift in Sources */,
 				D6FB12472243D4E30097EC7A /* AppDelegate.swift in Sources */,
+				D6970A002247B12700A1F561 /* Helper.swift in Sources */,
 				D6FB128B22440EEC0097EC7A /* Brand.swift in Sources */,
 				D69709F22245BA0800A1F561 /* Product.swift in Sources */,
 				D64E52BE224433ED00CFF041 /* PreFilterViewController.swift in Sources */,
@@ -766,15 +784,18 @@
 			baseConfigurationReference = 444A5EED1880A9FF08A9AFD2 /* Pods-iOS-Faire-Take-Home-Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MXKT7BP45;
 				INFOPLIST_FILE = "iOS-Faire-Take-Home-Assignment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rafaelbrandao.iOS-Faire-Take-Home-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS-Faire-Take-Home-Assignment/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -786,15 +807,18 @@
 			baseConfigurationReference = C59B68D2C4BDCFB50E399209 /* Pods-iOS-Faire-Take-Home-Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MXKT7BP45;
 				INFOPLIST_FILE = "iOS-Faire-Take-Home-Assignment/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rafaelbrandao.iOS-Faire-Take-Home-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS-Faire-Take-Home-Assignment/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

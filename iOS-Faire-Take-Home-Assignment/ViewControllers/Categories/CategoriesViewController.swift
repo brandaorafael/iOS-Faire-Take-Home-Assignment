@@ -39,17 +39,21 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         self.view.addSubview(myTableView)
         
         WebService.getAvailableCategories(serviceBlock: { (result: Dictionary<String, Any>) in
-            self.categories = Category.createCategoryArray(array: result["result"] as! Array<Dictionary<String, Any>>)
-            self.categoriesSelected = Array(repeating: false, count: self.categories.count)
-            
-            if let category: String = self.category {
+            if(result.count == 0){
+                Helper.apiError(navigation: self.navigationController!)
+            } else {
+                self.categories = Category.createCategoryArray(array: result["result"] as! Array<Dictionary<String, Any>>)
+                self.categoriesSelected = Array(repeating: false, count: self.categories.count)
                 
-                self.categoriesSelected[self.categories.index(where: { (c) -> Bool in
-                    c.name == category // test if this is the item you're looking for
-                })!] = true
+                if let category: String = self.category {
+                    
+                    self.categoriesSelected[self.categories.index(where: { (c) -> Bool in
+                        c.name == category // test if this is the item you're looking for
+                    })!] = true
+                }
+                
+                self.myTableView.reloadData()
             }
-            
-            self.myTableView.reloadData()
         })
     }
     
@@ -68,7 +72,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
         
-        cell.setFilter(filter:categories[indexPath.row].name, touched: categoriesSelected[indexPath.row], unique: true)
+        cell.setFilter(filter:categories[indexPath.row].name ?? "", touched: categoriesSelected[indexPath.row], unique: true)
         
         return cell
     }

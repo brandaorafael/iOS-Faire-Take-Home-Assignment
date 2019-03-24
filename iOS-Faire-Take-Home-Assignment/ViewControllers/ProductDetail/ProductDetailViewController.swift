@@ -42,16 +42,22 @@ class ProductDetailViewController: UIViewController {
 
         name.text = product.name
         longDescription.text = product.description
-        wholesalePrice.text = "Wholesale - $" + String(product.wholesalePriceCents/100)
-        retailPrice.text = "Retail - $" + String(product.retailPriceCents/100)
-        
-//        picture.sd_setImage(with: URL(string: product.images[0].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+        if let wholesalePriceCents = product.wholesalePriceCents {
+            wholesalePrice.text = "Wholesale - $" + String(wholesalePriceCents/100)
+        }
+        if let retailPriceCents = product.retailPriceCents {
+            retailPrice.text = "Retail - $" + String(retailPriceCents/100)
+        }
         
         var photosURLs = Array<Any>()
         
         for photo in product.images {
-            let urlStr = photo.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let url = URL(string: urlStr!)!
+            var urlStr = ""
+            if let imageUrl = photo.url {
+                urlStr = imageUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            }
+            
+            let url = URL(string: urlStr)!
             
             photosURLs.append(SDWebImageSource.init(url: url, placeholder: nil))
         }

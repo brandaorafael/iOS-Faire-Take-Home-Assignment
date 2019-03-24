@@ -21,13 +21,19 @@ class ProductCell: UICollectionViewCell {
     
     func setProduct(product: Product) {
         if(product.images.count > 1){
-            background.sd_setImage(with: URL(string: product.images[1].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
-        } else {
-            background.sd_setImage(with: URL(string: product.images[0].url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+            if let url = product.images[1].url {
+                background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+            }
+        } else if (product.images.count == 1) {
+            if let url = product.images[0].url {
+                background.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "faire-formerly-indigo-fair-_logo_201809101436103"))
+            }
         }
         
         self.name.text = product.name
-        price.text = "Wholesale $" + String(product.wholesalePriceCents/100)
+        if let wholesalePriceCents = product.wholesalePriceCents {
+            price.text = "Wholesale $" + String(wholesalePriceCents/100)
+        }
     }
 
 }

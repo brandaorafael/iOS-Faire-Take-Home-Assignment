@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Faire"
+        self.navigationItem.title = "Brands"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "baseline_filter_list_black"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(filter))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         
@@ -91,6 +91,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         page = 1
         
         WebService.getMakersWithFilters(leadTime: leadtimeIndex, makerValues: makerValues, page: page, category: category, serviceBlock: { (result: Dictionary<String, Any>) in
+            
             self.itens = Brand.createBrandArray(array: result["brands"] as! Array<Dictionary<String, Any>>)
             
             self.collection.reloadData()
